@@ -4,6 +4,10 @@ export const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
+      path: "",
+      redirect: { name: "UserList" },
+    },
+    {
       path: "/users",
       children: [
         {
