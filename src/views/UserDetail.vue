@@ -7,7 +7,7 @@
     </v-row>
     <v-row align="center" justify="center">
       <v-col cols="12" sm="8" lg="6">
-        <v-card v-if="user" :loading="isLoading">
+        <v-card :loading="isLoading">
           <!-- Card loader -->
           <template #loader="{ isActive }">
             <template v-if="isActive">
@@ -26,7 +26,7 @@
             <v-icon size="x-large" icon="mdi-account"></v-icon>
           </template>
           <template #title>
-            {{ user.name }}
+            {{ user?.name }}
           </template>
           <template #subtitle>
             <v-chip size="small">
@@ -34,57 +34,22 @@
                 <v-icon size="medium" icon="mdi-at"></v-icon>
               </template>
               <template #default>
-                <span class="pl-1">{{ user.username }}</span>
+                <span class="pl-1">{{ user?.username }}</span>
               </template>
             </v-chip>
           </template>
           <!-- Card body -->
           <template #text>
             <v-list>
-              <v-list-item>
-                <template #prepend>
-                  <v-icon icon="mdi-at"></v-icon>
-                </template>
-                <template #title>
-                  <UserDetailField :text="user.email" />
-                </template>
-              </v-list-item>
-              <v-list-item>
-                <template #prepend>
-                  <v-icon icon="mdi-phone"></v-icon>
-                </template>
-                <template #title>
-                  <UserDetailField :text="user.phone" />
-                </template>
-              </v-list-item>
-              <v-list-item>
-                <template #prepend>
-                  <v-icon icon="mdi-web"></v-icon>
-                </template>
-                <template #title>
-                  <UserDetailField :text="user.website" />
-                </template>
-              </v-list-item>
-              <v-list-item>
-                <template #prepend>
-                  <v-icon icon="mdi-map-marker"></v-icon>
-                </template>
-                <template #title>
-                  <UserDetailField :text="userAddress" />
-                </template>
-              </v-list-item>
-              <v-list-item>
-                <template #prepend>
-                  <v-icon icon="mdi-domain"></v-icon>
-                </template>
-                <template #title>
-                  <UserDetailField :text="companyInfo" />
-                </template>
-              </v-list-item>
+              <UserDetailField icon="mdi-at" :text="user?.email" />
+              <UserDetailField icon="mdi-phone" :text="user?.phone" />
+              <UserDetailField icon="mdi-web" :text="user?.website" />
+              <UserDetailField icon="mdi-map-marker" :text="userAddress" />
+              <UserDetailField icon="mdi-domain" :text="companyInfo" />
             </v-list>
           </template>
         </v-card>
-        <v-card v-else-if="!isLoading">
+        <v-card v-if="!user && !isLoading">
           <template #text>
             <p class="text-center">Oops... Something went wrong</p>
           </template>
