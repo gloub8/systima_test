@@ -14,7 +14,8 @@ import {
   VApp,
   VAppBar,
   VAppBarTitle,
-  VDataTable,
+  VDataTableServer,
+  VDataTableRow,
   VBtn,
   VIcon,
   VRow,
@@ -26,6 +27,9 @@ import {
   VListItemTitle,
   VMain,
   VContainer,
+  VTextField,
+  VCard,
+  VFadeTransition,
 } from "vuetify/components";
 
 const vuetify = createVuetify({
@@ -44,7 +48,8 @@ const vuetify = createVuetify({
     VApp,
     VAppBar,
     VAppBarTitle,
-    VDataTable,
+    VDataTableServer,
+    VDataTableRow,
     VBtn,
     VIcon,
     VRow,
@@ -56,6 +61,9 @@ const vuetify = createVuetify({
     VListItemTitle,
     VMain,
     VContainer,
+    VTextField,
+    VCard,
+    VFadeTransition,
   },
 });
 

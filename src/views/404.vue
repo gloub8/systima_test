@@ -1,7 +1,3 @@
 <template>
-  <div>404 Not Found</div>
+  <div class="d-flex justify-center py-5">404 Not Found</div>
 </template>
-
-<script setup lang="ts"></script>
-
-<style lang="scss" scoped></style>

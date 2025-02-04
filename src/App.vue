@@ -11,9 +11,11 @@
     </v-app-bar>
     <NavigationDrawer v-model="drawer" />
     <v-main>
-      <v-container>
-        <RouterView />
-      </v-container>
+      <RouterView #default="{ Component }">
+        <v-fade-transition mode="out-in">
+          <component :is="Component" />
+        </v-fade-transition>
+      </RouterView>
     </v-main>
   </v-app>
 </template>
@@ -26,5 +28,3 @@ import NavigationDrawer from "@/components/NavigationDrawer.vue";
 
 const drawer = ref<boolean>(false);
 </script>
-
-<style lang="scss" scoped></style>
