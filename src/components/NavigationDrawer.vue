@@ -10,6 +10,7 @@
         :key="i"
         :value="item"
         color="primary"
+        exact
         @click="handleNavigation(item.routeName)"
       >
         <template v-slot:prepend>
@@ -23,7 +24,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 import { useRouter } from "vue-router";
 
 export interface NavigationItem {
@@ -43,7 +43,6 @@ const emits = defineEmits<{
 }>();
 
 const router = useRouter();
-const drawer = ref<boolean>(false);
 const items: NavigationItem[] = [
   {
     title: "Users",
