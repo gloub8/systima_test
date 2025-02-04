@@ -30,6 +30,9 @@ import {
   VTextField,
   VCard,
   VFadeTransition,
+  VChip,
+  VSkeletonLoader,
+  VTooltip,
 } from "vuetify/components";
 
 const vuetify = createVuetify({
@@ -42,6 +45,9 @@ const vuetify = createVuetify({
   defaults: {
     VBtn: {
       style: "text-transform: none;",
+    },
+    VTooltip: {
+      location: "top",
     },
   },
   components: {
@@ -64,6 +70,9 @@ const vuetify = createVuetify({
     VTextField,
     VCard,
     VFadeTransition,
+    VChip,
+    VSkeletonLoader,
+    VTooltip,
   },
 });
 
